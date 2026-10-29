@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toninho Gramados - Plantio Profissional de Gramas</title>
+    <!-- Fonte impactante e moderna para o título e texto -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --dark-green: #1b5e20;
+            --light-green: #e8f5e9;
+            --accent-green: #4caf50;
+            --text-dark: #333333;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* HEADER / CABEÇALHO COM PAPEL DE PAREDE DE GRAMA */
+        header {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                        url('https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 1rem 4rem 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* TÍTULO TONINHO GRAMADOS COM EFEITO DE TEXTURA DE GRAMA VERDE */
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+
+            /* Textura de grama preenchendo o texto */
+            background: url('https://images.unsplash.com/photo-1584467541268-b040f83be3fd?q=80&w=1000&auto=format&fit=crop') repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            /* Destaque e sombra nas letras */
+            filter: drop-shadow(2px 2px 0px #11380d) drop-shadow(-2px -2px 0px #11380d) drop-shadow(0px 4px 10px rgba(0,0,0,0.8));
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #e2f7e2;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--white);
+            margin-bottom: 2rem;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-green);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .services-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Tabela de Preços */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .price-card {
+            background: var(--light-green);
+            border: 2px solid var(--accent-green);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .price-card h3 {
+            color: var(--dark-green);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-card .price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin: 1rem 0;
+        }
+
+        .price-card p {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25d366;
+            color: var(--white);
+            padding: 0.8rem 1.6rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: background 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe5d;
+        }
+
+        /* Galeria em Formato Retrato Padrão para Fotos e Vídeos */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Altura vertical padronizada (retrato) para imagens e vídeos */
+        .gallery-card img,
+        .gallery-card video {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
+            background-color: #000;
+        }
+
+        .gallery-card img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-card img:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-card-body {
+            padding: 1rem;
+        }
+
+        .gallery-card-body h4 {
+            color: var(--dark-green);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-card-body p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            text-align: center;
+            padding: 1.8rem;
+            margin-top: 3rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.4rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Toninho Gramados</h1>
+        <p>Especialista em Plantio e Preparação de Gramas de Qualidade</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Descrição dos Serviços -->
+        <section id="sobre">
+            <h2>Sobre o Serviço</h2>
+            <p class="services-text">
+                Transformamos o seu espaço com um gramado verde, uniforme e impecável. Trabalhamos com profissionalismo desde a preparação do solo até o plantio final, garantindo um acabamento perfeito para campos, residências, chácaras e comércios. Qualidade e dedicação em cada metro quadrado!
+            </p>
+        </section>
+
+        <!-- Tabela de Preços -->
+        <section id="precos">
+            <h2>Nossos Preços e Serviços</h2>
+            <div class="pricing-grid">
+
+                <!-- Grama Batatais -->
+                <div class="price-card">
+                    <h3>Grama Batatais</h3>
+                    <div class="price">R$ 15,00 <span style="font-size: 1rem; font-weight: normal;">/ m²</span></div>
+                    <p><strong>Incluso:</strong> Grama por minha conta e plantio completo.</p>
+                    <a href="https://wa.me/5533984668773?text=Olá%20Toninho,%20gostaria%20de%20um%20orçamento%20para%20o%20plantio%20de%20Grama%20Batatais." class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Pedir Orçamento
+                    </a>
+                </div>
+
+                <!-- Grama Esmeralda -->
+                <div class="price-card">
+                    <h3>Grama Esmeralda</h3>
+                    <div class="price">R$ 10,00 <span style="font-size: 1rem; font-weight: normal;">/ m²</span></div>
+                    <p><strong>Condição:</strong> Metro plantado. <em>(Grama por conta do cliente)</em></p>
+                    <a href="https://wa.me/5533984668773?text=Olá%20Toninho,%20gostaria%20de%20um%20orçamento%20para%20o%20plantio%20de%20Grama%20Esmeralda." class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Pedir Orçamento
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Galeria Completa (Todos os vídeos e fotos em formato retrato) -->
+        <section id="galeria">
+            <h2>Galeria de Trabalhos</h2>
+            <p class="services-text" style="margin-bottom: 1.5rem;">Confira fotos e vídeos dos nossos serviços realizados:</p>
+
+            <div class="gallery-grid">
+
+                <!-- VÍDEOS -->
+                <div class="gallery-card">
+                    <video controls preload="metadata">
+                        <source src="assets/video1.mp4" type="video/mp4">
+                        Seu navegador não suporta a exibição deste vídeo.
+                    </video>
+                    <div class="gallery-card-body">
+                        <h4>Processo de Instalação 1</h4>
+                        <p>Acompanhe a execução do plantio no terreno.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <video controls preload="metadata">
+                        <source src="assets/video2.mp4" type="video/mp4">
+                        Seu navegador não suporta a exibição deste vídeo.
+                    </video>
+                    <div class="gallery-card-body">
+                        <h4>Manuseio e Execução</h4>
+                        <p>Qualidade e alinhamento em cada etapa.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <video controls preload="metadata">
+                        <source src="assets/video3.mp4" type="video/mp4">
+                        Seu navegador não suporta a exibição deste vídeo.
+                    </video>
+                    <div class="gallery-card-body">
+                        <h4>Acabamento no Terreno</h4>
+                        <p>Profissionalismo na preparação do solo.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <video controls preload="metadata">
+                        <source src="assets/video4.mp4" type="video/mp4">
+                        Seu navegador não suporta a exibição deste vídeo.
+                    </video>
+                    <div class="gallery-card-body">
+                        <h4>Detalhes da Execução</h4>
+                        <p>Acompanhamento completo do projeto.</p>
+                    </div>
+                </div>
+
+                <!-- FOTOS -->
+                <div class="gallery-card">
+                    <a href="assets/foto1.jpg" target="_blank">
+                        <img src="assets/foto1.jpg" alt="Preparação de Solo">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Preparação de Solo</h4>
+                        <p>Nivelamento e limpeza para receber o plantio.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="assets/foto2.jpg" target="_blank">
+                        <img src="assets/foto2.jpg" alt="Alinhamento da Grama">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Alinhamento da Grama</h4>
+                        <p>Encaixe perfeito e acabamento verde impecável.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="assets/foto3.jpg" target="_blank">
+                        <img src="assets/foto3.jpg" alt="Área Concluída">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Área Concluída</h4>
+                        <p>Resultado final com uniformidade e beleza.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="assets/foto4.jpg" target="_blank">
+                        <img src="assets/foto4.jpg" alt="Plantio Residencial">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Plantio Residencial</h4>
+                        <p>Transformação completa do espaço verde.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="assets/foto5.jpg" target="_blank">
+                        <img src="assets/foto5.jpg" alt="Detalhes do Acabamento">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Detalhes do Acabamento</h4>
+                        <p>Dedicação e capricho em cada metro quadrado.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="assets/foto6.jpg" target="_blank">
+                        <img src="assets/foto6.jpg" alt="Serviço Realizado">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Serviço Realizado 6</h4>
+                        <p>Qualidade e compromisso com o cliente.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="assets/foto7.jpg" target="_blank">
+                        <img src="assets/foto7.jpg" alt="Serviço Realizado">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Serviço Realizado 7</h4>
+                        <p>Acabamento profissional em destaque.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="assets/foto8.jpg" target="_blank">
+                        <img src="assets/foto8.jpg" alt="Serviço Realizado">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Serviço Realizado 8</h4>
+                        <p>Área verde limpa e totalmente plantada.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="assets/foto9.jpg" target="_blank">
+                        <img src="assets/foto9.jpg" alt="Serviço Realizado">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Serviço Realizado 9</h4>
+                        <p>Mais um trabalho entregue com excelência.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="assets/foto10.jpg" target="_blank">
+                        <img src="assets/foto10.jpg" alt="Serviço Realizado">
+                    </a>
+                    <div class="gallery-card-body">
+                        <h4>Serviço Realizado 10</h4>
+                        <p>Dedicados a transformar o seu ambiente.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Toninho Gramados. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
