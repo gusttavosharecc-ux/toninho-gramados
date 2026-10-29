@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toninho Gramados - Plantio Profissional de Gramas</title>
-    <!-- Fonte impactante e moderna para o título e texto -->
+    <title>Toninho Gramados - Plantio Profissional e Paisagismo</title>
+    <!-- Fonte impactante e moderna -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Ícones FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -33,7 +33,6 @@
             line-height: 1.6;
         }
 
-        /* HEADER / CABEÇALHO COM PAPEL DE PAREDE DE GRAMA */
         header {
             position: relative;
             background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
@@ -44,7 +43,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        /* TÍTULO TONINHO GRAMADOS COM EFEITO DE TEXTURA DE GRAMA VERDE */
         header h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 3.5rem;
@@ -52,13 +50,9 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 0.8rem;
-
-            /* Textura de grama preenchendo o texto */
             background: url('https://images.unsplash.com/photo-1584467541268-b040f83be3fd?q=80&w=1000&auto=format&fit=crop') repeat;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-
-            /* Destaque e sombra nas letras */
             filter: drop-shadow(2px 2px 0px #11380d) drop-shadow(-2px -2px 0px #11380d) drop-shadow(0px 4px 10px rgba(0,0,0,0.8));
         }
 
@@ -108,13 +102,24 @@
             font-size: 1.1rem;
             color: #555;
             max-width: 800px;
-            margin: 0 auto 2rem auto;
+            margin: 0 auto 1.5rem auto;
         }
 
-        /* Tabela de Preços */
+        .region-badge {
+            background-color: var(--light-green);
+            border-left: 4px solid var(--accent-green);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--dark-green);
+            margin-top: 1.5rem;
+        }
+
+        /* Tabela de Preços Organizada (Grid com centralização do 3º item) */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 1.5rem;
         }
@@ -131,6 +136,14 @@
         .price-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* O terceiro card (Empreitada) ocupa a linha de baixo centralizado */
+        .price-card.full-width {
+            grid-column: span 2;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .price-card h3 {
@@ -168,7 +181,7 @@
             background-color: #1ebe5d;
         }
 
-        /* Galeria em Formato Retrato Padrão para Fotos e Vídeos */
+        /* Galeria em Formato Retrato */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -188,7 +201,6 @@
             transform: translateY(-3px);
         }
 
-        /* Altura vertical padronizada (retrato) para imagens e vídeos */
         .gallery-card img,
         .gallery-card video {
             width: 100%;
@@ -222,21 +234,74 @@
             color: #666;
         }
 
+        /* Caixa de Chamada para mais fotos/vídeos */
+        .more-media-box {
+            background: var(--light-green);
+            border: 2px dashed var(--accent-green);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .more-media-box p {
+            font-size: 1.1rem;
+            color: var(--dark-green);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Rodapé e Card do Desenvolvedor */
         footer {
             background-color: var(--dark-green);
             color: var(--white);
             text-align: center;
-            padding: 1.8rem;
+            padding: 2.5rem 1rem;
             margin-top: 3rem;
-            font-size: 0.95rem;
         }
 
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .dev-card {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .dev-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .dev-card i {
+            color: #25d366;
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Responsivo para telemóveis: empilha tudo em 1 coluna */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.4rem;
             }
             header p {
                 font-size: 1rem;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .price-card.full-width {
+                grid-column: span 1;
             }
         }
     </style>
@@ -245,22 +310,27 @@
 
     <header>
         <h1>Toninho Gramados</h1>
-        <p>Especialista em Plantio e Preparação de Gramas de Qualidade</p>
+        <p>Especialista em Plantio de Gramas, Paisagismo e Embelezamento de Jardins</p>
     </header>
 
     <div class="container">
 
-        <!-- Descrição dos Serviços -->
+        <!-- Descrição dos Serviços e Região -->
         <section id="sobre">
-            <h2>Sobre o Serviço</h2>
+            <h2>Sobre a Empresa</h2>
             <p class="services-text">
-                Transformamos o seu espaço com um gramado verde, uniforme e impecável. Trabalhamos com profissionalismo desde a preparação do solo até o plantio final, garantindo um acabamento perfeito para campos, residências, chácaras e comércios. Qualidade e dedicação em cada metro quadrado!
+                Transformamos o seu espaço com um gramado verde, uniforme e impecável. Trabalhamos com profissionalismo desde a preparação do solo e plantio de grama até o plantio de plantas ornamentais no jardim e embelezamento completo de áreas verdes.
             </p>
+            <div class="region-badge">
+                <i class="fas fa-map-marker-alt"></i> Sediados em Itanhomi-MG, atendemos com excelência toda a região: Governador Valadares, Tarumirim, Capitão Andrade, Ipatinga, São Geraldo e arredores!
+            </div>
         </section>
 
         <!-- Tabela de Preços -->
         <section id="precos">
-            <h2>Nossos Preços e Serviços</h2>
+            <h2>Nossos Preços e Orçamentos</h2>
+            <p class="services-text">Trabalhamos com preços por metro quadrado ou com valores fechados por empreitada para sua maior comodidade!</p>
+            
             <div class="pricing-grid">
 
                 <!-- Grama Batatais -->
@@ -283,10 +353,20 @@
                     </a>
                 </div>
 
+                <!-- Orçamento por Empreitada / Paisagismo (Centralizado embaixo) -->
+                <div class="price-card full-width" style="background: #e8f4fd; border-color: #2196f3;">
+                    <h3 style="color: #0d47a1;">Por Empreitada / Jardim</h3>
+                    <div class="price" style="font-size: 1.8rem; color: #1976d2;">A Combinar</div>
+                    <p>Projetos completos, plantio de plantas ornamentais e embelezamento geral sob medida.</p>
+                    <a href="https://wa.me/5533984668773?text=Olá%20Toninho,%20gostaria%20de%20fazer%20um%20orçamento%20por%20empreitada%20para%20meu%20jardim." class="btn-whatsapp" target="_blank" style="background-color: #2196f3;">
+                        <i class="fab fa-whatsapp"></i> Combinar Empreitada
+                    </a>
+                </div>
+
             </div>
         </section>
 
-        <!-- Galeria Completa (Todos os vídeos e fotos em formato retrato) -->
+        <!-- Galeria Completa -->
         <section id="galeria">
             <h2>Galeria de Trabalhos</h2>
             <p class="services-text" style="margin-bottom: 1.5rem;">Confira fotos e vídeos dos nossos serviços realizados:</p>
@@ -440,12 +520,26 @@
                 </div>
 
             </div>
+
+            <!-- Caixa de Solicitação de Mais Fotos/Vídeos -->
+            <div class="more-media-box">
+                <p>Para receber e ver mais vídeos e fotos do nosso serviço mais detalhado, entre em contato conosco pelo WhatsApp!</p>
+                <a href="https://wa.me/5533984668773?text=Olá%20Toninho,%20gostaria%20de%20receber%20mais%20fotos%20e%20vídeos%20detalhados%20dos%20seus%20serviços." class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Solicitar Mais Fotos e Vídeos
+                </a>
+            </div>
+
         </section>
 
     </div>
 
+    <!-- RODAPÉ -->
     <footer>
         <p>&copy; 2026 Toninho Gramados. Todos os direitos reservados.</p>
+        <!-- Card do Desenvolvedor -->
+        <a href="https://wa.me/5533984512784?text=Olá%20Gustavo,%20vi%20seu%20trabalho%20no%20site%20do%20Toninho%20Gramados%20e%20gostaria%20de%20fazer%20um%20orçamento." class="dev-card" target="_blank">
+            <i class="fab fa-whatsapp"></i> Desenvolvido por <strong>Gustavo Devs</strong>
+        </a>
     </footer>
 
 </body>
